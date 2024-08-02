@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags, title, essential CSS, etc. -->
+</head>
+<body>
+
+<!-- Your preloader and navigation section remains unchanged -->
+
+<!-- SCRIPTS -->
+<script>
+  // Function to prompt sign-in
+  function promptSignIn() {
+    const username = prompt("Please enter your username:");
+    const password = prompt("Please enter your password:");
+
+    // Constants for username and password
+    const correctUsername = "admin";
+    const correctPassword = "fssoyoy";
+
+    // Here, you can perform sign-in validation or actions
+    // Check if the entered username and password match the constants
+    if (username === correctUsername && password === correctPassword) {
+      // If both username and password are correct, allow access by setting a flag
+      document.getElementById('mainContent').style.display = 'block'; // Show the main content
+      document.getElementById('signInPrompt').style.display = 'none'; // Hide the sign-in prompt
+    } else {
+      // If the entered credentials are incorrect, show an alert and prompt again
+      alert("Invalid credentials. Please provide correct username and password.");
+      promptSignIn(); // Re-prompt for sign-in
+    }
+  }
+</script>
+<script>
+    // Function to prompt sign-in
+    function promptSignIn() {
+      const username = prompt("Please enter your username:");
+      const password = prompt("Please enter your password:");
+  
+      // Here, you can perform sign-in validation or actions
+      // For this example, let's check if both username and password are provided
+      if (username && password) {
+        // If both username and password are provided, allow access by setting a flag
+        document.getElementById('mainContent').style.display = 'block'; // Show the main content
+        document.getElementById('signInPrompt').style.display = 'none'; // Hide the sign-in prompt
+      } else {
+        // If either username or password is empty or not provided, show an alert and prompt again
+        alert("Invalid credentials. Please provide both username and password.");
+        promptSignIn(); // Re-prompt for sign-in
+      }
+    }
+   </script>
+   <div style="display: flex; justify-content: space-between;">
+    <form action="update_article.php?id=<?php echo $articleId; ?>" method="post" style="margin-right: 20px;">
+        <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+        Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+        Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+        Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+        <input type="submit" value="Save">
+    </form>
+    
+    <form action="update_article.php?id=<?php echo $articleId; ?>" method="post" style="margin-right: 20px;">
+        <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+        Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+        Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+        Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+        <input type="submit" value="Save">
+    </form>
+    
+    <form action="update_article.php?id=<?php echo $articleId; ?>" method="post">
+        <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+        Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+        Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+        Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+<p><a href="index.html">GO TO VIEW PAGE</a></p>
+
+
+<!-- Sign-in prompt -->
+<!-- ... -->
+
+<!-- Main content -->
+<!-- ... -->
+</body>
+</html>

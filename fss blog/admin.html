@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>admin_panel</title>
+
+  <!-- Include the essential CSS files -->
+  <!-- ... -->
+</head>
+<body>
+
+<!-- Your preloader and navigation section remains unchanged -->
+
+<!-- SCRIPTS -->
+
+<script>
+     // Function to prompt sign-in
+     function promptSignIn() {
+       const username = prompt("Please enter your username:");
+       const password = prompt("Please enter your password:");
+   
+       // Constants for username and password
+       const correctUsername = "admin";
+       const correctPassword = "fssoyo";
+   
+       // Here, you can perform sign-in validation or actions
+       // Check if the entered username and password match the constants
+       if (username === correctUsername && password === correctPassword) {
+         // If both username and password are correct, allow access by setting a flag
+         document.getElementById('mainContent').style.display = 'block'; // Show the main content
+         document.getElementById('signInPrompt').style.display = 'none'; // Hide the sign-in prompt
+       } else {
+         // If the entered credentials are incorrect, show an alert and prompt again
+         alert("Invalid credentials. Please provide correct username and password.");
+         promptSignIn(); // Re-prompt for sign-in
+       }
+     }
+   </script>
+<!-- Sign-in prompt -->
+<!-- <div class="signin-overlay" id="signInPrompt">
+  <div class="signin-form">
+    <h2>Sign In</h2>
+    <button onclick="promptSignIn()">Sign In</button>
+  </div>
+</div> -->
+<div class="signin-overlay" id="signInPrompt" style="display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999;">
+     <div class="signin-form" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background-color: #fff; padding: 20px; border-radius: 5px;">
+       <h2>Sign In</h2>
+       <button onclick="promptSignIn()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Sign In</button>
+     </div>
+   </div>
+   
+
+<!-- Main content -->
+<div id="mainContent" style="display: none;">
+  <!-- Your existing HTML content goes here -->
+  <!-- ... -->
+  <div style="display: flex; justify-content: space-between;">
+     <form action="update_article.php?id=<?php echo $articleId; ?>" method="post" style="margin-right: 20px;">
+         <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+         Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+         Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+         Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+         <input type="submit" value="Save">
+     </form>
+     
+     <form action="update_article.php?id=<?php echo $articleId; ?>" method="post" style="margin-right: 20px;">
+         <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+         Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+         Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+         Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+         <input type="submit" value="Save">
+     </form>
+     
+     <form action="update_article.php?id=<?php echo $articleId; ?>" method="post">
+         <h2 style="font-style: italic;">Edit Article <?php echo $articleId; ?></h2>
+         Article Title: <input type="text" name="title" value="" style="margin-bottom: 10px;"><br>
+         Article Content: <textarea name="content" rows="4" cols="50" style="margin-bottom: 10px;"></textarea><br>
+         Image: <input type="file" name="image" style="margin-bottom: 10px;"><br>
+         <input type="submit" value="Save">
+     </form>
+ </div>
+ 
+ 
+ 
+ 
+    <p><a href="index.html">GO TO VIEW PAGE</a></p>
+
+
+</div>
+
+
+</body>
+</html>
